@@ -5,8 +5,8 @@
   "description": "Yandex.Praktikum canonical projects",
   "main": "index.js",
   "scripts": {
-    "hint": "htmlhint ./public/index.html",
-    "deploy": "gh-pages -d public",
+    "hint": "htmlhint src/index.html",
+    "deploy": "gh-pages -d dist",
     "build": "rm -rf dist && webpack",
     "dev": "webpack-dev-server --open --watch"
   },
@@ -16,7 +16,6 @@
   },
   "author": "Igor Ushakov",
   "license": "ISC",
-  "homepage": "http://ushakov-igor.github.io/ya-demo",
   "dependencies": {
     "gh-pages": "^2.2.0",
     "htmlhint": "^0.11.0"

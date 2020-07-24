@@ -11,8 +11,9 @@ const editFormModalWindow = document.querySelector('.popup_type_edit');
 const cardFormModalWindow = document.querySelector('.popup_type_new-card');
 const openEditFormButton = document.querySelector('.profile__edit-button');
 
-openEditFormButton.addEventListener('click', () => {
-  profilePopup.open();
+const profile = new UserInfo({
+  nameSelector: '.profile__title',
+  aboutSelector: '.profile__description',
 });
 
 const openCardFormButton = document.querySelector('.profile__add-button');
@@ -25,11 +26,6 @@ const titleInputValue = editFormModalWindow.querySelector('.popup__input_type_na
 const descriptionInputValue = editFormModalWindow.querySelector('.popup__input_type_description');
 const cardNameInputValue = cardFormModalWindow.querySelector('.popup__input_type_card-name');
 const cardLinkInputValue = cardFormModalWindow.querySelector('.popup__input_type_url');
-
-const profile = new UserInfo({
-  nameSelector: '.profile__title',
-  aboutSelector: '.profile__description',
-});
 
 const placesSection = new Section(
   {
@@ -63,6 +59,13 @@ profilePopup.setEventListeners(
     profile.setUserInfo(formData);
   }
 );
+
+openEditFormButton.addEventListener('click', () => {
+  const userInfo = profile.getUserInfo();
+  titleInputValue.value = userInfo.name;
+  descriptionInputValue.value = userInfo.about;
+  profilePopup.open();
+});
 
 const linkPopup = new PopupWithForm('.popup_type_new-card', () => ({
   link: cardLinkInputValue.value,

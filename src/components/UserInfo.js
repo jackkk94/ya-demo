@@ -6,6 +6,13 @@ export default class UserInfo {
     this._aboutContainer = document.querySelector(aboutSelector);
   }
 
+  getUserInfo() {
+    return {
+      name: this._nameContainer.textContent,
+      about: this._aboutContainer.textContent
+    };
+  }
+
   setUserInfo({name, about}) {
     this._name = name;
     this._about = about;
