@@ -15,6 +15,11 @@ class Card {
       .cloneNode(true);
 
     return cardElement;
+
+    /*
+    Можно лучше: выполнено верно, но чтобы не выделять память под константу
+    cardElement, можно сразу возвращать необходимый dom - узел
+    */
   }
 
   _setEventListeners() {

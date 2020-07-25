@@ -22,6 +22,11 @@ export default class PopupWithForm extends Popup {
       this.close();
     });
     this._container.addEventListener('click', event => event.target.classList.contains('popup') ? this.close() : null);
+    /*
+    Можно лучше: для лучшей читаемости и единообразия в коде рекомендуется 
+    придерживаться единного стиля форматирования: вставлять пустую строку
+    между заданием обрабочиков событий
+    */
   }
 
   close() {

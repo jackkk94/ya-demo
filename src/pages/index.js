@@ -11,12 +11,21 @@ const editFormModalWindow = document.querySelector('.popup_type_edit');
 const cardFormModalWindow = document.querySelector('.popup_type_new-card');
 const openEditFormButton = document.querySelector('.profile__edit-button');
 
+/*
+Надо исправить: константы необходимо перенести в файл constants.js, поскольку данный файл
+должен содержать только логику создания и описания взаимодействия между классами компонентов
+*/ 
+
 const profile = new UserInfo({
   nameSelector: '.profile__title',
   aboutSelector: '.profile__description',
 });
 
 const openCardFormButton = document.querySelector('.profile__add-button');
+
+/*
+Надо исправить: константу openCardFormButton так же необходимо перенести в файл constants.js
+*/ 
 
 openCardFormButton.addEventListener('click', () => {
   linkPopup.open();
@@ -26,6 +35,11 @@ const titleInputValue = editFormModalWindow.querySelector('.popup__input_type_na
 const descriptionInputValue = editFormModalWindow.querySelector('.popup__input_type_description');
 const cardNameInputValue = cardFormModalWindow.querySelector('.popup__input_type_card-name');
 const cardLinkInputValue = cardFormModalWindow.querySelector('.popup__input_type_url');
+
+/*
+Надо исправить: константы titleInputValue, descriptionInputValue, cardNameInputValue,
+cardLinkInputValue необходимо перенести в файл constants.js
+*/ 
 
 const placesSection = new Section(
   {
@@ -87,3 +101,8 @@ checkFormEditProfile.enableValidation();
 checkFormAddPlace.enableValidation();
 
 placesSection.renderAll();
+
+/*
+Надо исправить: все утилитарные участки кода, не относящиеся к реализации классов вынесены в 
+файлы utils.js, constants.js.
+*/ 
